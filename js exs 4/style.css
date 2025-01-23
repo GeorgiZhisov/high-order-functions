@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: limegreen;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+h1 {
+    color: red;
+    font-size: 3em;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.game-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.start-button {
+    background-color: cyan;
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: yellow;
+}
+
+.hidden {
+    display: none;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    background-color: white; 
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    line-height: 150px;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid black;
+    transition: background-color 0.3s;
+}
+
+.card.flipped {
+    color: black;
+}
+
+.status-text {
+    color: red;
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+.flash {
+    animation: flash 0.5s infinite;
+}
+
+@keyframes flash {
+    0% { background-color: yellow; }
+    50% { background-color: red; }
+    100% { background-color: yellow; }
+}
