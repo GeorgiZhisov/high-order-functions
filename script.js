@@ -77,4 +77,7 @@ const startGame = () => {
     }
 };
 
+startButton.classList.add('flash');
+
+
 startButton.addEventListener('click', startGame);
