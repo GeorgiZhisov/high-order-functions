@@ -77,6 +77,4 @@ const startGame = () => {
     }
 };
 
-// Add chaotic flashing text on the start button
-startButton.classList.add('flash');
 startButton.addEventListener('click', startGame);
