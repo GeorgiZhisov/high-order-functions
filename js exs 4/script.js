@@ -5,16 +5,14 @@ let cardElements = document.querySelectorAll('.card');
 let startButton = document.querySelector('.start-button');
 let gameBoard = document.querySelector('.game-board');
 let statusText = document.querySelector('.status-text');
-let attemptsLeft = Math.floor(Math.random() * 3) + 3; // Randomize the number of fake popups (3–5)
+let attemptsLeft = Math.floor(Math.random() * 3) + 3; 
 
-// Predefined colors for card pairs
 const cardColors = ["red", "blue", "green", "purple", "orange", "pink"];
 const shuffledColors = [...cardColors, ...cardColors].sort(() => Math.random() - 0.5);
 
-// Assign colors to cards
 cardElements.forEach((card, index) => {
     card.dataset.color = shuffledColors[index];
-    card.style.backgroundColor = "white"; // Start with all cards face down
+    card.style.backgroundColor = "white"; 
 });
 
 const shuffleCards = () => {
@@ -32,7 +30,6 @@ const shuffleCards = () => {
 const flipCard = (card) => {
     if (card.classList.contains('flipped') || secondCard) return;
 
-    // Flip the card to reveal its color
     card.classList.add('flipped');
     card.style.backgroundColor = card.dataset.color;
 
@@ -46,13 +43,11 @@ const flipCard = (card) => {
 
 const checkMatch = () => {
     if (firstCard.dataset.color === secondCard.dataset.color) {
-        // Matched cards: Popup with "So Close" and flip them back
         setTimeout(() => {
             alert("So close! Keep trying.");
             flipBackCards();
         }, 500);
     } else {
-        // No match: Flip them back after a delay
         setTimeout(flipBackCards, 1000);
     }
 };
@@ -69,7 +64,7 @@ const flipBackCards = () => {
 const startGame = () => {
     if (attemptsLeft > 0) {
         attemptsLeft--;
-        alert("Nope, try again!"); // Popup message
+        alert("Nope, try again!"); 
     } else {
         alert("Fine, let's start the game...");
         startButton.classList.add('hidden');
